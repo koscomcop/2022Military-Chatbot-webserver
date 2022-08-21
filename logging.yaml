@@ -1,0 +1,29 @@
+version: 1
+disable_existing_loggers: true
+
+formatters:
+  standard:
+    format: '%(asctime)s.%(msecs)03d | %(levelname)s | %(message)s'
+  error:
+    format: '%(levelname)s | <PID %(process)d:%(processName)s> | %(name)s.%(funcName)s() | %(message)s'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: standard
+    stream: ext://sys.stdout
+
+  info_file_handler:
+    class: logging.handlers.TimedRotatingFileHandler
+    level: INFO
+    formatter: standard
+    interval: 1
+    when: D
+    filename: ./log/info.log
+    backupCount: 5
+    encoding: utf8
+
+root:
+  level: INFO
+  handlers: [console, info_file_handler]

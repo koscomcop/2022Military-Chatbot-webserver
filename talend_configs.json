@@ -1,0 +1,57 @@
+{
+  "version": 6,
+  "entities": [
+    {
+      "entity": {
+        "type": "Project",
+        "id": "91df63f6-d972-4cad-873a-7293b6097c01",
+        "name": "챗봇"
+      },
+      "children": [
+        {
+          "entity": {
+            "type": "Request",
+            "method": {
+              "requestBody": true,
+              "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+              "name": "POST"
+            },
+            "body": {
+              "formBody": {
+                "overrideContentType": true,
+                "encoding": "application/x-www-form-urlencoded",
+                "items": [
+                  {
+                    "enabled": true,
+                    "type": "Text",
+                    "name": "input1",
+                    "value": "해군 대위는 총 몇명이야?"
+                  }
+                ]
+              },
+              "bodyType": "Form",
+              "textBody": "'input1' : 'hello'"
+            },
+            "uri": {
+              "scheme": {
+                "name": "http",
+                "version": "V11"
+              },
+              "host": "172.22.13.129:8000",
+              "path": "/chat"
+            },
+            "id": "b2260f8b-1725-4a45-9ee1-a9ec0724f726",
+            "name": "채팅",
+            "headers": [
+              {
+                "enabled": true,
+                "name": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
