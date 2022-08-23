@@ -38,7 +38,7 @@ class Menu:
             logger.info(query_result[0][0])
             logger.info(type(query_result[0][0]))
             # query_result[0][0] : 'https://openapi.mnd.go.kr/sample/xml/DS_TB_MNDT_DATEBYMLSVC_1968
-            url = query_result[0][0].replace('sample', '3232313634343937343732313632313430')
+            url = query_result[0][0].replace('sample', '.....')
             url = query_result[0][0].replace('xml', 'json')
             url += '/1/5/'
         
